@@ -109,6 +109,39 @@
   /* service card icons */
   .service-icon{width:38px;height:38px;margin-bottom:2px;}
 
+  /* real photos, duotone-treated to match brand */
+  .hero-photo-frame{
+    position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;
+    background:var(--navy-2);
+  }
+  .hero-photo-frame img{
+    width:100%;height:340px;object-fit:cover;display:block;
+    filter:grayscale(55%) contrast(1.08) brightness(0.9);
+  }
+  .hero-photo-frame::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(160deg, rgba(224,138,62,0.28) 0%, rgba(16,22,31,0.15) 45%, rgba(16,22,31,0.75) 100%);
+    mix-blend-mode:multiply;
+  }
+  .hero-photo-caption{
+    position:absolute;left:16px;bottom:14px;z-index:2;
+    font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);
+    background:rgba(16,22,31,0.55);padding:6px 10px;border:1px solid rgba(245,241,232,0.2);
+  }
+
+  .service-photo{position:relative;height:150px;overflow:hidden;}
+  .service-photo img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(60%) contrast(1.1) brightness(0.85);
+  }
+  .service-photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(200deg, rgba(224,138,62,0.32) 0%, rgba(16,22,31,0.2) 50%, rgba(16,22,31,0.85) 100%);
+    mix-blend-mode:multiply;
+  }
+  .service-card.has-photo{padding:0 0 26px;}
+  .service-card.has-photo .card-body{padding:22px 24px 0;display:flex;flex-direction:column;gap:10px;}
+
   /* ---------- SERVICES ---------- */
   .section{padding:72px 0;border-bottom:1px solid var(--line);}
   .section-head{max-width:56ch;margin-bottom:44px;}
@@ -208,58 +241,10 @@
       </div>
     </div>
     <div>
-      <svg class="hero-banner" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0.5" y="0.5" width="399" height="319" rx="3" fill="#161E2B" stroke="rgba(245,241,232,0.14)"/>
-
-        <!-- house cutaway roof -->
-        <path d="M40 130 L200 40 L360 130" stroke="rgba(245,241,232,0.35)" stroke-width="3" fill="none" stroke-linejoin="round"/>
-        <!-- house walls -->
-        <path d="M60 130 V270 H340 V130" stroke="rgba(245,241,232,0.35)" stroke-width="3" fill="none"/>
-        <!-- interior divider walls -->
-        <path d="M200 130 V270 M60 200 H340" stroke="rgba(245,241,232,0.16)" stroke-width="2"/>
-
-        <!-- fuse box, top-left room -->
-        <rect x="82" y="150" width="34" height="30" rx="2" fill="#20293A" stroke="#E08A3E" stroke-width="1.5"/>
-        <line x1="88" y1="158" x2="110" y2="158" stroke="#E08A3E" stroke-width="1.5"/>
-        <line x1="88" y1="165" x2="110" y2="165" stroke="#E08A3E" stroke-width="1.5"/>
-        <line x1="88" y1="172" x2="104" y2="172" stroke="#E08A3E" stroke-width="1.5"/>
-
-        <!-- wiring path (copper), fuse box to fan and to socket -->
-        <path class="pulse" d="M99 150 V140 H160 V152" stroke="#E08A3E" stroke-width="2" fill="none"/>
-        <path d="M99 150 V140 H160 V152" stroke="rgba(224,138,62,0.18)" stroke-width="2" fill="none"/>
-        <path class="pulse" d="M99 180 V190 H150 V218" stroke="#E08A3E" stroke-width="2" fill="none"/>
-        <path d="M99 180 V190 H150 V218" stroke="rgba(224,138,62,0.18)" stroke-width="2" fill="none"/>
-
-        <!-- ceiling fan, top-left -->
-        <circle cx="160" cy="140" r="5" fill="#0D131C" stroke="#E08A3E" stroke-width="1.5"/>
-        <path d="M160 140 L178 133 M160 140 L178 147 M160 140 L142 133" stroke="#E08A3E" stroke-width="1.5" stroke-linecap="round"/>
-
-        <!-- switch/socket, bottom-left -->
-        <rect x="140" y="218" width="20" height="26" rx="2" fill="#20293A" stroke="#E08A3E" stroke-width="1.5"/>
-        <circle cx="147" cy="228" r="1.6" fill="#E08A3E"/>
-        <circle cx="153" cy="228" r="1.6" fill="#E08A3E"/>
-        <line x1="145" y1="236" x2="155" y2="236" stroke="#E08A3E" stroke-width="1.3"/>
-
-        <!-- bathroom, right room: geyser + tap + pipes (blue) -->
-        <rect x="290" y="150" width="30" height="40" rx="3" fill="#20293A" stroke="#4A7A8C" stroke-width="1.5"/>
-        <line x1="296" y1="160" x2="314" y2="160" stroke="#4A7A8C" stroke-width="1.3"/>
-        <line x1="296" y1="168" x2="314" y2="168" stroke="#4A7A8C" stroke-width="1.3"/>
-
-        <path class="pulse" d="M305 190 V210 H260 V232" stroke="#4A7A8C" stroke-width="2" fill="none"/>
-        <path d="M305 190 V210 H260 V232" stroke="rgba(74,122,140,0.18)" stroke-width="2" fill="none"/>
-
-        <!-- tap -->
-        <path d="M250 232 h20 M260 232 v10 q0 8 -8 8" stroke="#4A7A8C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <circle class="drip" cx="252" cy="256" r="2" fill="#4A7A8C"/>
-        <circle class="drip" cx="252" cy="256" r="2" fill="#4A7A8C"/>
-
-        <!-- ground line -->
-        <line x1="20" y1="270" x2="380" y2="270" stroke="rgba(245,241,232,0.35)" stroke-width="3"/>
-
-        <!-- labels -->
-        <text x="99" y="200" fill="#E08A3E" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" opacity="0.9">WIRING</text>
-        <text x="305" y="205" fill="#4A7A8C" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" opacity="0.9">PLUMBING</text>
-      </svg>
+      <div class="hero-photo-frame">
+        <img src="https://images.unsplash.com/photo-1705579610383-4f9b36e2a920?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Electrician working on house wiring" loading="eager">
+        <div class="hero-photo-caption">On-site · Kolar District</div>
+      </div>
     </div>
   </div>
 </section>
@@ -272,41 +257,53 @@
       <p>From a fresh wiring job in a new house to a leaking tap at 8pm — one number, one visit, sorted.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><path d="M8 30 L19 8 L15 18 H24 L13 30 L17 20 H8Z" fill="none" stroke="#E08A3E" stroke-width="2" stroke-linejoin="round"/></svg>
-        <div class="tag">Electrical · New Build</div>
-        <h3>New House Wiring</h3>
-        <p>Complete point wiring, board setup and load planning for homes under construction.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1705579610383-4f9b36e2a920?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="New house electrical wiring" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Electrical · New Build</div>
+          <h3>New House Wiring</h3>
+          <p>Complete point wiring, board setup and load planning for homes under construction.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><rect x="9" y="9" width="20" height="20" rx="2" stroke="#E08A3E" stroke-width="2"/><path d="M14 15 h10 M14 20 h10 M14 25 h6" stroke="#E08A3E" stroke-width="2" stroke-linecap="round"/></svg>
-        <div class="tag">Electrical · Repair</div>
-        <h3>Fault Diagnosis &amp; Repair</h3>
-        <p>Short circuits, tripping, dead points and switch/socket faults fixed on the spot.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1596480330945-12a5380b9c59?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="Electrical fault diagnosis and panel repair" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Electrical · Repair</div>
+          <h3>Fault Diagnosis &amp; Repair</h3>
+          <p>Short circuits, tripping, dead points and switch/socket faults fixed on the spot.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><path d="M10 10 h10 M15 10 v10 q0 8 -8 8" stroke="#4A7A8C" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="7" cy="30" r="1.8" fill="#4A7A8C"/></svg>
-        <div class="tag">Plumbing · Advanced</div>
-        <h3>Plumbing Solutions</h3>
-        <p>Pipeline leaks, geyser and tap fitting, drainage issues and bathroom fixture work.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="Advanced plumbing pipe repair" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Plumbing · Advanced</div>
+          <h3>Plumbing Solutions</h3>
+          <p>Pipeline leaks, geyser and tap fitting, drainage issues and bathroom fixture work.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><circle cx="19" cy="19" r="3" stroke="#F2B705" stroke-width="2"/><path d="M19 19 L29 13 M19 19 L29 25 M19 19 L9 13" stroke="#F2B705" stroke-width="2" stroke-linecap="round"/></svg>
-        <div class="tag">Installation</div>
-        <h3>Fixture Installation</h3>
-        <p>Fans, geysers, switches, taps and pipelines — supplied and fitted correctly the first time.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1698653223542-3319103c425b?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="Ceiling fan and fixture installation" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Installation</div>
+          <h3>Fixture Installation</h3>
+          <p>Fans, geysers, switches, taps and pipelines — supplied and fitted correctly the first time.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><path d="M19 8 v10 M19 24 v6" stroke="#E08A3E" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="13" stroke="#E08A3E" stroke-width="2"/></svg>
-        <div class="tag">Emergency</div>
-        <h3>Same-Day Visits</h3>
-        <p>Urgent electrical or plumbing issue — call ahead and get a technician the same day.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1585569695919-db237e7cc455?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="Electrician tool kit for same-day visits" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Emergency</div>
+          <h3>Same-Day Visits</h3>
+          <p>Urgent electrical or plumbing issue — call ahead and get a technician the same day.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 38 38" fill="none"><path d="M8 12 h22 v12 H16 l-5 5 v-5 H8 Z" stroke="#F2B705" stroke-width="2" stroke-linejoin="round"/></svg>
-        <div class="tag">Get Started</div>
-        <h3>Free Quote on WhatsApp</h3>
-        <p>Send a photo of the issue and get a clear price before we visit — no surprises later.</p>
+      <div class="service-card has-photo">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1705579610383-4f9b36e2a920?fm=jpg&q=75&w=800&auto=format&fit=crop" alt="Get a free quote on WhatsApp" loading="lazy"></div>
+        <div class="card-body">
+          <div class="tag">Get Started</div>
+          <h3>Free Quote on WhatsApp</h3>
+          <p>Send a photo of the issue and get a clear price before we visit — no surprises later.</p>
+        </div>
       </div>
     </div>
   </div>
