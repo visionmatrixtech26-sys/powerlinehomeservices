@@ -280,12 +280,27 @@
   .sticky-call { background: var(--safety); color: var(--navy); }
 
   /* ---------- FOOTER ---------- */
-  footer { padding: 48px 0 24px; background: #070B10; border-top: 1px solid var(--line); }
+  footer { padding: 48px 0 32px; background: #070B10; border-top: 1px solid var(--line); }
   .footer-row {
     display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
     gap: 20px; color: var(--text-dim); font-size: 14px;
   }
   .footer-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; color: #fff; }
+  .footer-credits {
+    text-align: right;
+  }
+  .footer-credits a {
+    color: var(--copper-bright);
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+  .footer-credits a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+  }
+  @media (max-width: 600px) {
+    .footer-credits { text-align: left; width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -687,7 +702,9 @@
       <span>PowerLine Home Services</span>
     </div>
     <div>Trusted Residential Electrical &amp; Plumbing • Kolar District</div>
-    <div>© 2026 Nandish Y N • All Rights Reserved</div>
+    <div class="footer-credits">
+      © 2026 Nandish Y N • Powered by <a href="https://visionmatrixtech.com" target="_blank" rel="noopener">Vision Matrix Tech</a>
+    </div>
   </div>
 </footer>
 
