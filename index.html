@@ -43,9 +43,9 @@
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto;}
-  .brand{display:flex;align-items:center;gap:10px;font-size:18px;letter-spacing:0.02em;}
-  .brand-mark{width:28px;height:28px;flex:none;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;font-size:18px;letter-spacing:0.02em;font-weight:700;}
+  .brand-mark{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;}
   .navlinks{display:flex;gap:28px;font-size:14px;color:var(--text-dim);}
   .navlinks a:hover{color:var(--copper-bright);}
   .nav-call{
@@ -214,9 +214,7 @@
 <header>
   <nav>
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 28 28" fill="none">
-        <path d="M15 1 L4 16 H12 L10 27 L24 10 H15 L15 1Z" fill="#E08A3E"/>
-      </svg>
+      <img class="brand-mark" src="logo.png" alt="PowerLine Logo">
       PowerLine
     </div>
     <div class="navlinks">
@@ -381,7 +379,10 @@
 
 <footer>
   <div class="wrap footer-row">
-    <div class="brand">PowerLine Home Services</div>
+    <div class="brand">
+      <img class="brand-mark" style="width: 24px; height: 24px;" src="logo.png" alt="PowerLine Logo">
+      PowerLine Home Services
+    </div>
     <div>Trusted Repairs, Done Right — Every Time.</div>
     <div>© 2026 Nandish Y N, Yalachipura, Kolar</div>
   </div>
